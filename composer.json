@@ -1,0 +1,15 @@
+{
+  "name": "nunomarques/videotheek_app",
+  "autoload": {
+    "psr-4": {
+      "SRC\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "NlcmarquesDev",
+      "email": "nunolcmarques@gmail.com"
+    }
+  ],
+  "require": {}
+}
