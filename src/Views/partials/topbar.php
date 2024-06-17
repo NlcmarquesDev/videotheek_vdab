@@ -34,8 +34,8 @@
                                 <use xlink:href="#aperture" />
                             </svg>
                         </a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Films</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/videotheek_app/allFilms.php">Films</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/videotheek_app/login.php">Admin</a></li>
                 </ul>
             </div>
         </div>

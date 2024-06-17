@@ -12,7 +12,7 @@ include './src/Views/partials/topbar.php';
                 <b>Buy. Rent. Watch.</b> All inside the app. Welcome to the home of thousands of movies, including all the latest blockbusters.
             </h3>
 
-            <a class="btn btn-outline-dark" href="/videotheek_app/films.php">
+            <a class="btn btn-outline-dark" href="/videotheek_app/allFilms.php">
                 View All
                 <svg class="arrow" width="15" height="15">
                     <use xlink:href="#chevron-right" />

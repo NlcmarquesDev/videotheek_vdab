@@ -26,10 +26,6 @@ class FilmsServices
     {
         return $this->films->getCodes();
     }
-    public function getData()
-    {
-        return $this->films->getDataForTable();
-    }
 
     public function getLastMovies()
     {
