@@ -22,6 +22,11 @@ class FilmsDAO
     {
         return $this->db->query("SELECT titel FROM films")->findAll();
     }
+
+    public function getLastMovies(int $max = 10)
+    {
+        return $this->db->query("SELECT * FROM films ORDER BY year DESC LIMIT " . $max)->findAll();
+    }
     public function getCodes()
     {
         return $this->db->query("SELECT f.titel, GROUP_CONCAT(c.copy_number ORDER BY c.copy_number SEPARATOR ', ') AS codes

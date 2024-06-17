@@ -11,8 +11,10 @@
                     </a>
                     <div class="collapse" id="collapseLayoutsFilms" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-sidenav-light.html">All Films</a>
-                            <a class="nav-link" href="layout-static.html">Add Film</a>
+                            <a class="nav-link" href="/videotheek_app/form-rent.php">Rent Films</a>
+                            <a class="nav-link" href="/videotheek_app/delivery-rent.php">Delivery Films</a>
+                            <a class="nav-link" href="/videotheek_app/films.php">All Films</a>
+                            <a class="nav-link" href="/videotheek_app/form-film.php">Add Film</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
