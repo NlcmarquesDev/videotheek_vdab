@@ -20,7 +20,7 @@ class FilmsDAO
     }
     public function getById($id)
     {
-        return $this->db->query("SELECT * FROM imdb WHERE film_id=:id", [':id' => $id])->find();
+        return $this->db->query("SELECT * FROM imdb WHERE movie_id=:id", [':id' => $id])->find();
     }
     public function getTitels()
     {
