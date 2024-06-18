@@ -16,16 +16,20 @@ class FilmsDAO
     }
     public function getAll()
     {
-        return $this->db->query("SELECT * FROM films")->findAll();
+        return $this->db->query("SELECT * FROM imdb")->findAll();
+    }
+    public function getById($id)
+    {
+        return $this->db->query("SELECT * FROM imdb WHERE film_id=:id", [':id' => $id])->find();
     }
     public function getTitels()
     {
-        return $this->db->query("SELECT titel FROM films")->findAll();
+        return $this->db->query("SELECT titel FROM imdb")->findAll();
     }
 
-    public function getLastMovies(int $max = 10)
+    public function getLastMovies(int $max = 12)
     {
-        return $this->db->query("SELECT * FROM films ORDER BY year DESC LIMIT " . $max)->findAll();
+        return $this->db->query("SELECT * FROM imdb Where IMDB_Rating >=8.8 LIMIT " . $max)->findAll();
     }
     public function getCodes()
     {

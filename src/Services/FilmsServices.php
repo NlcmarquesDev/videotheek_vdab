@@ -18,6 +18,10 @@ class FilmsServices
     {
         return $this->films->getAll();
     }
+    public function getFilmById($id)
+    {
+        return $this->films->getById($id);
+    }
     public function getAllTitels()
     {
         return $this->films->getTitels();
