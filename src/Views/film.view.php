@@ -24,7 +24,11 @@ include './src/Views/partials/topbar.php';
                 <p><b>Date realease -</b> <?= $movie['Released_Year'] ?></p>
                 <p><b>IMDB RATING -</b> <?= $movie['IMDB_Rating'] ?></p>
                 <p><b>Duration -</b> <?= $movie['Runtime'] ?>.</p>
-                <p><b>Movies in Store -</b></p>
+                <p><b>Movies in Store - </b>
+                    <?php foreach ($codes as $code) : ?>
+                        <span class="badge text-bg-<?= isInStore($code['copy_number']) ? 'danger' : 'success' ?>"><?= $code['copy_number'] ?></span>
+                    <?php endforeach ?>
+                </p>
                 <div class="d-flex gap-3 mt-5 mb-2 ms-auto">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">

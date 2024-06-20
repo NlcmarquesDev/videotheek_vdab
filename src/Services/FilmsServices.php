@@ -30,10 +30,18 @@ class FilmsServices
     {
         return $this->films->getCodes();
     }
+    public function getAllCodesById(int $id)
+    {
+        return $this->films->getCodesById($id);
+    }
 
     public function getLastMovies()
     {
         return $this->films->getLastMovies();
+    }
+    public function isCodeInStore(int $code)
+    {
+        return $this->films->isThisCodeInStore($code);
     }
     function checkFilmIsInStore(string $codes, $films)
     {

@@ -33,9 +33,24 @@ class FilmsDAO
     }
     public function getCodes()
     {
-        return $this->db->query("SELECT f.titel, GROUP_CONCAT(c.copy_number ORDER BY c.copy_number SEPARATOR ', ') AS codes
-FROM films f
-JOIN copies c ON f.film_id = c.film_id
-GROUP BY f.titel")->findAll();
+        return $this->db->query("SELECT i.Series_Title, GROUP_CONCAT(c.copy_number ORDER BY c.copy_number SEPARATOR ', ') AS codes
+FROM imdb i
+JOIN copies c ON i.movie_id = c.movie_id
+GROUP BY i.Series_Title")->findAll();
+    }
+    public function getCodesById(int $id)
+    {
+        return $this->db->query("SELECT `copy_number`
+FROM `copies`
+WHERE `movie_id` = :id;", [':id' => $id])->findAll();
+    }
+
+    public function isThisCodeInStore(int $code)
+    {
+        return $this->db->query("SELECT c.copy_number
+FROM copies c
+JOIN rents r ON c.copy_id = r.copy_id
+WHERE c.copy_number = :code
+  AND r.date_delivery IS NULL;", [':code' => $code])->findAll();
     }
 }
