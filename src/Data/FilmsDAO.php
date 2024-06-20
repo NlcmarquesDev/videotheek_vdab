@@ -53,4 +53,12 @@ JOIN rents r ON c.copy_id = r.copy_id
 WHERE c.copy_number = :code
   AND r.date_delivery IS NULL;", [':code' => $code])->findAll();
     }
+
+    public function getMovieFromTheCode(int $code)
+    {
+        return $this->db->query("SELECT i.Series_title, i.Poster_Link
+FROM copies c
+JOIN imdb i ON c.movie_id = i.movie_id
+WHERE c.copy_number = :code; ", [':code' => $code])->find();
+    }
 }

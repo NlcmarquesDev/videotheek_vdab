@@ -12,10 +12,10 @@ include './src/Views/partials/topbar.php';
         ?>
             <div class="col">
                 <a href="/videotheek_app/film.php?id=<?= $movie['movie_id'] ?>" class="text-decoration-none">
-                    <div class="card card-cover h-100  text-bg-dark rounded-4 shadow-lg" style="background: url(<?= $movie['Poster_Link'] ?>) no-repeat;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="card card-cover h-100  text-bg-dark rounded-4 shadow-lg" style="background: top right/50% url(<?= $movie['Poster_Link'] ?>) no-repeat ; ">
+                        <div class="d-flex flex-column justify-content-end h-100 p-5 pb-3 text-white text-shadow-1">
                             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><?= $movie['Series_Title'] ?></h3>
-                            <ul class="d-flex list-unstyled mt-auto">
+                            <ul class="d-flex list-unstyled ">
                                 <li class="d-flex align-items-center me-3">
                                     <svg class="bi me-2" width="1em" height="1em">
                                         <use xlink:href="#geo-fill" />

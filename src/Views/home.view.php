@@ -1,6 +1,7 @@
 <?php
 include './src/Views/partials/header.php';
 include './src/Views/partials/topbar.php';
+include './src/Views/partials/offcanvas.php';
 ?>
 
 <main>
@@ -21,10 +22,11 @@ include './src/Views/partials/topbar.php';
 
         </div>
         <div class="product-device shadow-sm d-none d-lg-block"></div>
+
     </div>
 
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 align-items-stretch g-4 py-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mx-auto align-items-stretch g-4 py-5 container-fluid">
         <?php foreach ($allMovies as $movie) :
         ?>
             <div class="col">

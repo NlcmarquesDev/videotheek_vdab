@@ -43,34 +43,8 @@ class FilmsServices
     {
         return $this->films->isThisCodeInStore($code);
     }
-    function checkFilmIsInStore(string $codes, $films)
+    public function getMovieFromTheCode($code)
     {
-        $code = explode(',', $codes);
-        $NotReturn = explode(',', $films);
-
-        $newString = '';
-
-        foreach ($code as $cod) {
-            if (in_array($cod, $NotReturn)) {
-                $newString .= '<b>' . $cod . '</b>';
-            } else {
-                $newString .= $cod . ', ';
-            }
-        }
-        return $newString;
-    }
-    function numberFilmInStore(string $codes, $films)
-    {
-        $code = explode(',', $codes);
-        $NotReturn = explode(',', $films);
-
-        $inStore = count($code);
-
-        foreach ($code as $cod) {
-            if (in_array($cod, $NotReturn)) {
-                $inStore--;
-            }
-        }
-        return $inStore;
+        return $this->films->getMovieFromTheCode($code);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('vendor/autoload.php');
 
 
@@ -23,9 +23,9 @@ if (isset($_GET['id'])) {
         $movies = new FilmsServices();
         $isStore = $movies->isCodeInStore($code);
         if (count($isStore)  === 0) {
-            return  false;
+            return  true;
         } else {
-            return true;
+            return false;
         }
     }
 

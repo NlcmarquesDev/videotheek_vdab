@@ -3,15 +3,11 @@ include './src/Views/partials/header.php';
 include './src/Views/partials/topbar.php';
 ?>
 <div class="container py-4">
-
-
-
     <div class="row align-items-md-stretch">
         <div class="col-md-6">
             <div class="h-100 p-5 bg-body-tertiary border rounded-3 d-flex flex-column justify-content-center">
                 <h1 class="display-5 fw-bold mb-5 text-center"><?= $movie['Series_Title'] ?></h1>
                 <div class="mx-auto">
-
                     <img src="<?= $movie['Poster_Link'] ?>" width="300" alt="">
                 </div>
             </div>
@@ -26,7 +22,7 @@ include './src/Views/partials/topbar.php';
                 <p><b>Duration -</b> <?= $movie['Runtime'] ?>.</p>
                 <p><b>Movies in Store - </b>
                     <?php foreach ($codes as $code) : ?>
-                        <span class="badge text-bg-<?= isInStore($code['copy_number']) ? 'danger' : 'success' ?>"><?= $code['copy_number'] ?></span>
+                        <span class="badge text-bg-<?= isInStore($code['copy_number']) ? 'success' : 'danger' ?>"><?= $code['copy_number'] ?></span>
                     <?php endforeach ?>
                 </p>
                 <div class="d-flex gap-3 mt-5 mb-2 ms-auto">
@@ -47,9 +43,33 @@ include './src/Views/partials/topbar.php';
                     </span>
                 </div>
                 <div class="d-flex flex-column gap-3">
-                    <button class="btn btn-outline-secondary" type="button">add Whishlist</button>
-                    <button class="btn btn-lg btn-outline-secondary" type="button">Rent Movie</button>
+                    <!-- <button class="btn btn-outline-secondary" type="button">add Whishlist</button> -->
+                    <button class="btn btn-lg btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Rent Movie</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="text-dark text-center">Rent the Movie <?= $movie['Series_Title'] ?>? </h5>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                    <form action="/videotheek_app/basket.php" method="POST">
+                                        <?php foreach ($codes as $code) : ?>
+                                            <input type="hidden" name="codes[]" value="<?= isInStore($code['copy_number']) ? $code['copy_number'] : '' ?>">
+                                        <?php endforeach ?>
+                                        <button type="submit" class="btn btn-primary">Yes! Rent it..</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
