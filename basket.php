@@ -25,10 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (isset($_SESSION['basket'])) {
                 array_push($_SESSION['basket'], $data);
+                $_SESSION['alert'] = 'Movie added to the basket';
                 header('location:/videotheek_app/index.php');
                 exit();
             } else {
                 $_SESSION['basket'] = [$data];
+                $_SESSION['alert'] = 'Movie added to the basket';
                 header('location:/videotheek_app/index.php');
                 exit();
             }

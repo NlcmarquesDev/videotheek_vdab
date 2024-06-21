@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     unset($array[$index]);
     $_SESSION['basket'] = $array;
+    $_SESSION['alert'] = 'Movie deleted successfully from your basket';
 }
 
 header('location:/videotheek_app/index.php');

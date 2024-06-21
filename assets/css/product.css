@@ -73,3 +73,8 @@
   background-repeat: no-repeat;
   object-fit: cover;
 }
+.basket {
+  position: fixed;
+  top: 6px;
+  right: 25px;
+}

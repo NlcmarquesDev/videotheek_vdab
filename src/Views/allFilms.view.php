@@ -1,9 +1,9 @@
 <?php
 include './src/Views/partials/header.php';
 include './src/Views/partials/topbar.php';
+include './src/Views/partials/offcanvas.php';
 ?>
 <div class="b-example-divider"></div>
-
 <div class="container-fluid px-4 py-5" id="custom-cards">
     <h2 class="pb-2 border-bottom">All Movies</h2>
 

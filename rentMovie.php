@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $rentFilm = $movies->saveRentMovie($copy_id);
 
         $_SESSION = [];
+        $_SESSION['alert'] = '<b>Thank, you!</b>Your movies have been rented';
     }
 }
 
