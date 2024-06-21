@@ -56,7 +56,7 @@ WHERE c.copy_number = :code
 
     public function getMovieFromTheCode(int $code)
     {
-        return $this->db->query("SELECT i.Series_title, i.Poster_Link
+        return $this->db->query("SELECT i.Series_title, i.Poster_Link, c.movie_id, c.copy_id
 FROM copies c
 JOIN imdb i ON c.movie_id = i.movie_id
 WHERE c.copy_number = :code; ", [':code' => $code])->find();

@@ -20,4 +20,16 @@ FROM rents a
 JOIN copies c ON a.copy_id = c.copy_id
 WHERE a.date_delivery IS NULL")->find();
     }
+
+    public function saveRent(int $copy_id)
+    {
+        $date = date("Y-m-d");
+        $user_id = 1;
+
+        return $this->db->query("INSERT INTO rents (user_id,copy_id, date_rent) VALUES (:user_id, :copy_id, :date_rent)", [
+            ':user_id' => $user_id,
+            ':copy_id' => $copy_id,
+            'date_rent' => $date
+        ]);
+    }
 }

@@ -13,10 +13,10 @@
         </div>
         <div class="offcanvas-body">
             <h4 class="mb-3">Rent Movies</h4>
-            <div class="d-flex flex-column gap-3 ">
+            <div class="d-flex flex-column gap-3  ">
 
                 <?php if (isset($_SESSION['basket'])) : ?>
-                    <?php foreach ($_SESSION['basket'] as $movie) :  ?>
+                    <?php foreach ($_SESSION['basket'] as $key => $movie) :  ?>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex gap-2 align-items-center ">
                                 <img src="<?= $movie['image'] ?>" width="80" height="80">
@@ -25,13 +25,23 @@
                                     <p class=""><?= $movie['code'] ?></p>
                                 </div>
                             </div>
-                            <button class="btn btn-sm btn-outline-danger">delete</button>
+                            <form action="/videotheek_app/deleteMovie.php" method="POST">
+                                <input type="hidden" name="delete" value="<?= $key ?>">
+                                <button class="btn btn-sm btn-outline-danger">delete</button>
+                            </form>
 
                         </div>
                     <?php endforeach ?>
+                    <form action="/videotheek_app/rentMovie.php" method="POST" class="text-center">
+                        <button type="submit" class="btn btn-primary w-50 mt-4 ">Rent</button>
+                    </form>
+                <?php else : ?>
+                    <div class="text-center">
+                        <h6>No Movies insert</h6>
+                    </div>
+                    <a href="/videotheek_app/index.php" class="btn btn-primary">Home</a>
                 <?php endif ?>
 
-                <button class="btn btn-primary">Rent</button>
             </div>
         </div>
     </div>

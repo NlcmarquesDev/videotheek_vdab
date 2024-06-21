@@ -18,4 +18,9 @@ class RentsServices
     {
         return $this->rent->getCodesNotReturn();
     }
+
+    public function saveRentMovie(int $copy_id)
+    {
+        return $this->rent->saveRent($copy_id);
+    }
 }

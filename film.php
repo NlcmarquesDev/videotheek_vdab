@@ -7,7 +7,6 @@ use SRC\Services\FilmsServices;
 
 $movies = new FilmsServices();
 
-
 if (isset($_GET['id'])) {
     $movie = $movies->getFilmById($_GET['id']);
     if (!$movie) {
@@ -17,7 +16,7 @@ if (isset($_GET['id'])) {
 
     $codes = $movies->getAllCodesById($_GET['id']);
 
-    //funcao para verificar se esta alugado ou nao?
+
     function isInStore($code)
     {
         $movies = new FilmsServices();

@@ -16,13 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (strlen($code) != 0) {
             $dataFromTheMovie = $films->getMovieFromTheCode((int)$code);
             $data = [
+                'copy_id' => $dataFromTheMovie['copy_id'],
+                'movie_id' => $dataFromTheMovie['movie_id'],
                 'image' => $dataFromTheMovie['Poster_Link'],
                 'title' => $dataFromTheMovie['Series_title'],
                 'code' => $code
             ];
-
-
-
 
             if (isset($_SESSION['basket'])) {
                 array_push($_SESSION['basket'], $data);
