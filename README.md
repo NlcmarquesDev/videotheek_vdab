@@ -39,7 +39,7 @@ https://github.com/NlcmarquesDev/videotheek_vdab/assets/111293493/84a25e49-576b-
 
 ## Notes:
 
-This project is a basic example of a job search system.
+This project is a basic example of a rent films system.
 You can extend the project with additional features.
 This project is not secure for production use. You need to implement security measures to protect your website and database.
 
